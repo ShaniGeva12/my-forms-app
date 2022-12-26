@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ng-container formArrayName="dynamic">
+    <ng-container *ngFor="let dfc of dynamicForm.controls; let i = index">
+      <div [formGroupName]="i">
+        <label>
+          {{ dynamicFormControls[i].label }}
+          <input [type]="dynamicFormControls[i].type" formControlName="dynamicControl">
+        </label>
+      </div>
+    </ng-container>
+  </ng-container>
+  <button mat-raised-button color="primary" type="submit">submit</button>
+</form>
