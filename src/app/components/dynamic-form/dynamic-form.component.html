@@ -2,10 +2,10 @@
   <ng-container formArrayName="dynamic">
     <ng-container *ngFor="let dfc of dynamicForm.controls; let i = index">
       <div [formGroupName]="i">
-        <label>
-          {{ dynamicFormControls[i].label }}
-          <input [type]="dynamicFormControls[i].type" formControlName="dynamicControl">
-        </label>
+        <mat-form-field appearance="outline">
+          <mat-label> {{ dynamicFormControls[i].label }} </mat-label>
+          <input matInput [type]="dynamicFormControls[i].type" formControlName="dynamicControl">
+        </mat-form-field>
       </div>
     </ng-container>
   </ng-container>
