@@ -43,6 +43,7 @@ export class DynamicFormComponent {
   createFormControl(templateControl: DynamicFormControl): FormGroup {
     return this.fb.group({
       dynamicControl: this.fb.control(templateControl.value),
+      label: this.fb.control(templateControl.label),
     });
   }
 
